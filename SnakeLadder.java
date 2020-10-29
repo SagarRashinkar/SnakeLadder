@@ -4,6 +4,7 @@ class SnakeLadder {
 
 	public static int playerPos = 0;		//player starting position
 	public static int winningPoints = 100;		//points to win the match
+	public static int diceCount = 0;		//declared variable for dice count
 
 	public static int rollDice() {			//method to get the roll value from the dice
 
@@ -22,6 +23,7 @@ class SnakeLadder {
 			
 			int value = rollDice();			//call to rollDice method
 			int option = checkOption();		//call to checkOption method
+			diceCount++;				//increment dice count
 
 			switch(option) {			
 
@@ -50,7 +52,16 @@ class SnakeLadder {
 				default:
 					System.out.println("Invalid!!!");
 
-			}	
+			}
+			if(playerPos<100) {
+
+				continue;
+			}
+			else{
+
+				System.out.println(diceCount+" times dice rolled to win by player1");
+				break;
+			}
 		}
 	}
 }
