@@ -31,6 +31,11 @@ class SnakeLadder {
 				case 2:
 					System.out.println("You got a ladder");		//ladder if choose 2
 					playerPos += value;				//add dice value to the player position
+					
+					if(playerPos > winningPoints) {			//checking winning condition
+
+						playerPos -= value;
+					}
 					System.out.println("current position is:"+playerPos);
 					break;
 				case 3:
